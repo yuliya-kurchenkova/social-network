@@ -1,0 +1,97 @@
+<div class="link">
+  <a routerLink='/user-list'>{{"titles.userList" | translate}}</a>
+</div>
+<div>
+  <div class="card" [formGroup]="formEdit">
+    <mat-card class="example-card">
+      <mat-card-title>{{"titles.formEdit" | translate}}</mat-card-title>
+      <mat-card-content>
+        <div class="box">
+          <div>
+            <input type="file" (change)="encodeImageFileAsURL($event)" formControlName="img"/>
+          </div>
+          <div *ngIf="isImageSaved">
+            <span (click)="removeImg()" class="material-icons">close</span>
+          </div>
+        </div>
+        <div class="card-year">
+          <mat-form-field class="card-start">
+            <mat-label>{{"placeholders.firstName" | translate}}</mat-label>
+            <input matInput type="text" autocomplete="off" placeholder="{{'placeholders.firstName' | translate}}" formControlName="firstName" maxlength="20"/>
+            <mat-error *ngIf="formEdit.get('firstName')?.hasError('required')">{{"errors.firstNameRequired" | translate}}</mat-error>
+            <mat-error *ngIf="formEdit.get('firstName')?.hasError('minlength')">{{"errors.firstNameLength" | translate}}</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>{{"placeholders.lastName" | translate}}</mat-label>
+            <input matInput type="text" #firstName name="name" class="input" autocomplete="off" placeholder="{{'placeholders.lastName' | translate}}" formControlName="lastName" maxlength="20"/>
+            <mat-error *ngIf="formEdit.get('lastName')?.hasError('required')">{{"errors.lastNameRequired" | translate}}</mat-error>
+            <mat-error *ngIf="formEdit.get('lastName')?.hasError('minlength')">{{"errors.lastNameLength" | translate}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field>
+            <mat-label>{{"placeholders.university" | translate}}</mat-label>
+            <input matInput type="text" placeholder="{{'placeholders.university' | translate}}" autocomplete="off" formControlName="university" maxlength="20">
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field>
+            <mat-label>{{"placeholders.speciality" | translate}}</mat-label>
+            <input matInput type="text" placeholder="{{'placeholders.speciality' | translate}}" autocomplete="off" formControlName="speciality" maxlength="20">
+          </mat-form-field>
+        </div>
+        <div class="card-year">
+          <mat-form-field appearance="fill" class="card-start">
+            <mat-label>{{"placeholders.start-date" | translate}}</mat-label>
+            <mat-select formControlName="yearOfAdmission">
+              <mat-option *ngFor="let optionStart of optionsStart" [value]="optionStart">{{optionStart}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>{{"placeholders.endTraining" | translate}}</mat-label>
+            <mat-select formControlName="yearOfEnding" (change)="addOld()">
+              <mat-option *ngFor="let option of options" [value]="option">{{option}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="card-year">
+          <mat-form-field appearance="fill" class="card-start">
+            <mat-label>{{"placeholders.country" | translate}}</mat-label>
+            <mat-select formControlName="country">
+              <mat-option checked value="ru">{{"placeholders.ru" | translate}}</mat-option>
+              <mat-option value="ua">{{"placeholders.ua" | translate}}</mat-option>
+              <mat-option value="by">{{"placeholders.by" | translate}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <div class="form-control">
+              <input matInput type="text" formControlName="city" placeholder="{{'placeholders.city' | translate}}" autocomplete="off" maxlength="20">
+            </div>
+          </mat-form-field>
+        </div>
+        <div formGroupName="skills">
+          <button mat-stroked-button color="primary" type="button" (click)="addSkill()">{{"buttons.addSkill" | translate}}</button>
+          <div
+            class="example-container"
+            *ngFor="let control of formEdit.get('skills')?.controls; let idx = index"
+          >
+            <mat-form-field>
+              <mat-label>{{"placeholders.youSkills" | translate}}</mat-label>
+                <div class="card-skills">
+                  <input matInput type="text" placeholder="" autocomplete="off" [formControlName]="idx" maxlength="20">
+                  <span (click)="removeSkills(idx)" class="material-icons">close</span>
+                </div>
+              </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="btn">
+        <button mat-raised-button color="primary" class="card-btn" (click)="editUser()">{{"buttons.refresh" | translate}}</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<div class="img-loader">
+  <img src="../../../assets/img/loader.gif" *ngIf="isLoading | async">
+</div>

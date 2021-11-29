@@ -1,16 +1,19 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
+import { Environment } from "../app/shared/interfaces/environmentInterface";
 
-export const environment = {
-  production: false
+export const environment: Environment = {
+  production: false,
+    firebase: {
+    apiKey: "AIzaSyBdp7Vu97AJzVMuka2--tc46cWiJjMpfH8",
+    authDomain: "angular-social-network-81860.firebaseapp.com",
+    projectId: "angular-social-network-81860",
+    storageBucket: "angular-social-network-81860.appspot.com",
+    messagingSenderId: "594870193533",
+    appId: "1:594870193533:web:135b7529b9008451539014",
+    measurementId: "G-E8QTVSRW1K"
+  }
 };
 
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+export const authURL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`;
+export const baseURL = 'https://angular-social-network-81860-default-rtdb.europe-west1.firebasedatabase.app';
+
+

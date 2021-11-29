@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="header-wrapper">
+    <div class="img">
+      <img src="../../../assets/img/user-list-logo.png">
+    </div>
+    <div class="header-box">
+      <div *ngIf="isSignIn">
+         <a class="title-name">
+           <i class="fas fa-user"></i>
+         </a>
+      </div>
+      <div *ngIf="isSignIn">
+        <button mat-flat-button (click)="logoutBtn()">{{"buttons.logout" | translate}}</button>
+      </div>
+      <div class="material-icons icon" (click)="changeLanguage()">language</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="link" *ngIf="isAdmin">
+  <a routerLink='/admin/create-user'>User Create</a>
+</div>
+<div class="wrapper">
+   <div class="card">
+      <input type="text" placeholder="{{'placeholders.search' | translate}}" [(ngModel)]="searchStr" class="card-input" [patterns]="customPatterns" mask="0{20}" autocomplete="on">
+   </div>
+   <div class="user-item">
+     <app-user-item  *ngFor="let user of users | searchUser:searchStr" [user]="user" (onDel)="deleteUser(user)"></app-user-item>
+   </div>
+</div>
+
+<div class="img-loader">
+  <img src="../../../assets/img/loader.gif" *ngIf="isLoading | async">
+</div>

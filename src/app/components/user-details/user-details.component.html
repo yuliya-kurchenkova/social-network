@@ -1,0 +1,73 @@
+<div class="card">
+  <mat-card class="card-img">
+    <div *ngIf="!imgUser">
+      <div class="card-ava">
+        <span class="card-ava_text">{{currentAvatar}}</span>
+      </div>
+    </div>
+    <div *ngIf="imgUser">
+      <img mat-card-xl-image src="{{imgUser}}">
+    </div>
+    <mat-card-actions>
+       <button mat-raised-button color="primary" class="card-btn" routerLink='/user-list'>{{"titles.userList" | translate}}</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="card-profile">
+    <div>
+      <div>
+        <h1>{{firstNameUser}} {{lastNameUser}}</h1>
+      </div>
+      <hr/>
+      <div class="card-box">
+        <div class="card-email">
+          <div><span>{{"placeholders.email" | translate}}:</span></div>
+          <div>{{emailUser}}</div>
+        </div>
+        <div>
+          <div class="card-email">
+            <div *ngIf="countryUser"><span>{{"placeholders.country" | translate}}:</span></div>
+            <div *ngIf="countryUser">{{countryUser}}</div>
+          </div>
+        </div>
+        <div class="card-email">
+          <div *ngIf="cityUser"><span>{{"placeholders.city" | translate}}: </span></div>
+          <div *ngIf="cityUser">{{cityUser}}</div>
+        </div>
+      </div>
+      <hr/>
+      <div class="card-box">
+        <div>
+          <div>
+            <div class="card-email">
+              <div *ngIf="universityUser"><span>{{"placeholders.university" | translate}}: </span></div>
+              <div *ngIf="universityUser">{{universityUser}}</div>
+            </div>
+            <div class="card-email">
+              <div *ngIf="specialityUser"><span>{{"placeholders.speciality" | translate}}: </span></div>
+              <div *ngIf="specialityUser">{{specialityUser}}</div>
+            </div>
+          </div>
+          <div class="card-email">
+            <div *ngIf="yearOfAdmissionUser">
+              <div><span>{{"placeholders.start" | translate}}</span></div>
+              <div>{{yearOfAdmissionUser}}</div>
+            </div>
+            <div *ngIf="yearOfEndingUser">
+              <div><span>{{"placeholders.end" | translate}}</span></div>
+              <div>{{yearOfEndingUser}}</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="skills">
+          <hr/>
+          <div><span>{{"placeholders.skills" | translate}}</span></div>
+          <div>{{skills}}</div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<div class="img-loader">
+  <img src="../../../assets/img/loader.gif" *ngIf="isLoading | async">
+</div>

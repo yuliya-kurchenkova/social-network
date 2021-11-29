@@ -1,0 +1,52 @@
+{
+  "titles": {
+    "formIn": "Login",
+    "formCreate": "Create user",
+    "formEdit": "Edit user",
+    "userList": "User List"
+  },
+  "placeholders": {
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "university": "The university",
+    "speciality": "Speciality",
+    "start-date": "Start date",
+    "endTraining": "End of training",
+    "country": "Country",
+    "city": "City",
+    "ru": "Russia",
+    "ua": "Ukraine",
+    "by": "Belarus",
+    "youSkills": "Your skills",
+    "search": "Search",
+    "start": "Start",
+    "end": "End",
+    "skills": "Skills"
+  },
+  "buttons": {
+    "sign-in": "Signin",
+    "logout": "Logout",
+    "save": "Save",
+    "yes": "Yes",
+    "no": "No",
+    "addSkill": "Add skill",
+    "refresh": "Refresh",
+    "moreDetails": "More details"
+  },
+  "errors": {
+    "emailRequired": "Enter the email",
+    "emailNotCorrect": "Enter is not correct",
+    "passwordRequired": "Enter the password",
+    "passwordMinLength": "Minimum length 8 characters",
+    "firstNameRequired": "Name is not specified",
+    "firstNameLength": "Name is minimum of 2 letters",
+    "lastNameRequired": "Last name is not specified",
+    "lastNameLength": "Last name is minimum of 2 letters"
+  },
+  "text": {
+    "modalDeleteTask": "Are you sure you want to delete this user?"
+  }
+}
+

@@ -1,0 +1,44 @@
+<div class="card-item">
+  <mat-card class="card-item_box">
+    <div class="card-box">
+      <mat-card-title-group>
+        <div *ngIf="!userObj.img">
+          <div class="card-ava">
+            <span class="card-ava_text">{{currentAvatar}}</span>
+            <div *appReverseIf="!userObj.isOnline">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="userObj.img">
+          <img mat-card-sm-image src="{{userObj.img}}">
+          <div *appReverseIf="!userObj.isOnline" class="circle-img"></div>
+        </div>
+      </mat-card-title-group>
+      <mat-card-content>
+        <mat-card-title>{{userObj.firstName}} {{userObj.lastName  | nameUser}}</mat-card-title>
+        <mat-card-subtitle>{{userObj.email}}</mat-card-subtitle>
+      </mat-card-content>
+    </div>
+    <div>
+        <div class="card-menu" *ngIf="isAdmin">
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['/admin', 'edit-user', userObj.uid]">
+              <i class="material-icons">create</i>
+              <span>Edit User</span>
+            </button>
+            <button mat-menu-item (click)="deleteUser()">
+              <i class="material-icons">delete</i>
+              <span>Delete User</span>
+            </button>
+          </mat-menu>
+        </div>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" class="card-btn" (click)="showMoreDetails()">{{"buttons.moreDetails" | translate}}</button>
+        </mat-card-actions>
+    </div>
+  </mat-card>
+</div>

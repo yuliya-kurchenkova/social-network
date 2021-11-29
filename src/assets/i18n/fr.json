@@ -1,0 +1,54 @@
+{
+  "titles": {
+    "formIn": "Connexion",
+    "formCreate": "Créer un utilisateur",
+    "formEdit": "Modifier l'utilisateur",
+    "userList": "Liste d'utilisateurs"
+  },
+  "placeholders": {
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "university": "L'Université",
+    "speciality": "Spécialité",
+    "start-date": "Date de début",
+    "endTraining": "Fin de formation",
+    "country": "Pays",
+    "city": "Ville",
+    "ru": "Russie",
+    "ua": "Ukraine",
+    "by": "Biélorussie",
+    "youSkills": "Tes compétences",
+    "search": "Chercher",
+    "start": "Début",
+    "end": "Finir",
+    "skills": "Compétences"
+  },
+  "buttons": {
+    "sign-in": "S'identifier",
+    "logout": "Se déconnecter",
+    "save": "Sauvegarder",
+    "yes": "Oui",
+    "no": "Non",
+    "addSkill": "Ajouter une compétence",
+    "refresh": "Rafraîchir",
+    "moreDetails": "Plus de détails"
+  },
+  "errors": {
+    "emailRequired": "Entrez l'e-mail",
+    "emailNotCorrect": "La saisie n'est pas correcte",
+    "passwordRequired": "Entrer le mot de passe",
+    "passwordMinLength": "Longueur minimale 8 caractères",
+    "firstNameRequired": "Le nom n'est pas spécifié",
+    "firstNameLength": "Le nom est au minimum de 2 lettres",
+    "lastNameRequired": "Le nom de famille n'est pas spécifié",
+    "lastNameLength": "Le nom de famille est au minimum de 2 lettres"
+  },
+  "text": {
+    "modalDeleteTask": "Êtes-vous sûr de vouloir supprimer cet utilisateur?"
+  }
+}
+
+
+
