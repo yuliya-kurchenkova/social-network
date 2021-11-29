@@ -11,10 +11,10 @@ import { LocalStorageService } from '../../shared/services/local-storage.service
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-  public isSignIn: boolean | any;
-  public language: string = 'en';
-  public userObj: any;
-  public userObjId: string | any;
+  public isSignIn: boolean | any
+  public language: string = 'en'
+  public userObj: any
+  public userObjId: string | any
 
   constructor(
     private auth: AuthService,
